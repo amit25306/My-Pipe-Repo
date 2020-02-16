@@ -11,6 +11,9 @@ pipeline {
 					echo "executing test cases"
 				}
 			}
+		}
+	node1
+		stages {
 			stage('build') {
 				steps {
 					echo "building the code"
@@ -20,5 +23,12 @@ pipeline {
 				input "deploy to server"
 			}
 		}	
+	node2 
+		stages {
+			stage('deploy')
+				steps {
+					echo "deploying"
+				}
+		}
 }
 
