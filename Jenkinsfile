@@ -1,10 +1,21 @@
 pipeline {
-	agent any
+	agent any 
 		stages {
-			stage('print hi') {
+			stage('clone') {
 				steps {
-					echo "hi"
+					echo "Cloning from git"
 				}
 			}
-		}		
+			stage('test') {
+				steps {
+					echo "executing test cases"
+				}
+			}
+			stage('build') {
+				steps {
+					echo "building the code"
+				}
+			}
+		}	
 }
+
