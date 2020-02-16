@@ -12,7 +12,7 @@ node {
 			}
 			}
 }
-	node1 {
+	node {
 			stage('build') {
 				steps {
 					echo "building the code"
@@ -22,7 +22,7 @@ node {
 				input "deploy to server ?"
 			}
 		}
-	node2 {
+	node {
 			stage('deploy') {
 				steps {
 					echo "deploying"
