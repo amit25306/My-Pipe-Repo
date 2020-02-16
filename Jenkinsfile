@@ -16,6 +16,9 @@ pipeline {
 					echo "building the code"
 				}
 			}
+			stage('get approval') {
+				input "deploy to server"
+			}
 		}	
 }
 
