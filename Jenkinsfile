@@ -11,6 +11,7 @@ node {
 				}
 			}
 			}
+}
 	node1 {
 			stage('build') {
 				steps {
