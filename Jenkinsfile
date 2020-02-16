@@ -1,32 +1,18 @@
-node { 
-		stages {
-			stage('clone') {
-				steps {
-					echo "Cloning from git"
-				}
-			}
-			stage('test') {
-				steps {
-					echo "executing test cases"
-				}
-			}
-			}
+node {
+    stage('build'){
+        echo "building"
+    }
 }
-	node {
-			stage('build') {
-				steps {
-					echo "building the code"
-				}
-			}
-			stage('get approval') {
-				input "deploy to server ?"
-			}
-		}
-	node {
-			stage('deploy') {
-				steps {
-					echo "deploying"
-				}
-				}
+node {
+    stage('test'){
+        echo "testing"
+    }
 }
-
+stage('Get approval'){
+    input "Deploy to qa?"
+}
+node {
+    stage('deploy to qa'){
+        echo "deploying"
+    }
+}
