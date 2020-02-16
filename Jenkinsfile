@@ -1,5 +1,4 @@
-pipeline {
-	agent any 
+node { 
 		stages {
 			stage('clone') {
 				steps {
@@ -11,25 +10,22 @@ pipeline {
 					echo "executing test cases"
 				}
 			}
-		}
-	node1
-		stages {
+			}
+	node1 {
 			stage('build') {
 				steps {
 					echo "building the code"
 				}
 			}
 			stage('get approval') {
-				input "deploy to server"
+				input "deploy to server ?"
 			}
-		}	
-	node2 
-		stages {
+		}
+	node2 {
 			stage('deploy') {
 				steps {
 					echo "deploying"
 				}
 				}
-		}
 }
 
